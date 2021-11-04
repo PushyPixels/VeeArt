@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class Rune : MonoBehaviour
 {
+    [SerializeField]
     public List<IParameter> inputs = new List<IParameter>();
+    [SerializeField]
     public List<IParameter> outputs = new List<IParameter>();
     
     virtual public void Exec()
@@ -32,15 +34,25 @@ public class Rune : MonoBehaviour
 
     public interface IParameter
     {
+        [SerializeField]
         string Name { get; set; }
+
+        [SerializeField]
         Type ParameterType { get; }
     }
 
     [Serializable]
     public class Parameter<T> : IParameter
     {
+        [SerializeField]
         public string Name { get; set; }
+        [SerializeField]
         public T Value { get; set; }
+
+        public Parameter(string name)
+        {
+            Name = name;
+        }
 
         public Type ParameterType
         {
