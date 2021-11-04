@@ -5,11 +5,6 @@ using UnityEngine;
 
 public class Rune : MonoBehaviour
 {
-    [SerializeField]
-    public List<IParameter> inputs = new List<IParameter>();
-    [SerializeField]
-    public List<IParameter> outputs = new List<IParameter>();
-    
     virtual public void Exec()
     {
         Debug.Log("Exec called on: " + gameObject.name, gameObject);
@@ -20,29 +15,8 @@ public class Rune : MonoBehaviour
         Debug.Log("Exec called on: " + gameObject.name, gameObject);
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    public interface IParameter
-    {
-        [SerializeField]
-        string Name { get; set; }
-
-        [SerializeField]
-        Type ParameterType { get; }
-    }
-
     [Serializable]
-    public class Parameter<T> : IParameter
+    public class Parameter<T>
     {
         [SerializeField]
         public string Name { get; set; }
