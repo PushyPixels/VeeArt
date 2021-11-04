@@ -10,7 +10,7 @@ public class GetPosition : Rune
     {
         base.Exec();
 
-        Debug.Log("Outputting current position as Vector");
+        Debug.Log("Outputting current position as Vector to: " + positionOutput.name, positionOutput.gameObject);
         positionOutput.value = transform.position;
     }
 
