@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class GetPosition : Rune
 {
-    public Vector3 position;
+    public RuneVectorOutput positionOutput;
 
     public override void Exec()
     {
         base.Exec();
 
         Debug.Log("Outputting current position as Vector");
-        position = transform.position;
+        positionOutput.outputValue = transform.position;
     }
 
     // Start is called before the first frame update
