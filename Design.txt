@@ -101,3 +101,7 @@ Git version control for all visceral changes
 The reason people worry more about Facebook rather than Google is they KNOW the data they gave Facebook.
 
 Default Universe should have tools to reset to default, reset to user baseline, and reset to pre-simulation
+
+The classic reflected mirror puzzle except you have to program your robot to hold the positions
+
+Premade robot logic physics based player interactions (deep drm)
