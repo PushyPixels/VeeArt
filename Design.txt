@@ -1,0 +1,103 @@
+The Virtual Arts
+
+Make a Logic editor sytem for Unity (runtime)
+Make a Recorder System (to record all future dev sessions, including making Voxel Editor)
+	iRecordable interface
+Make a Voxel editor system for Unity (runtime)
+Make a simple game with the Voxel editor/Logic editor
+Make a Patreon for project (educational content/game kernel) and advertise Unity back-bridge
+	(Bring the games you make in the editor into Unity; ready to publish.)
+Sell Epic on porting back bridge (and thus game) to Unreal
+Use Epic money to port to GoDot (Or other appropriate open source option)
+	Or build from scratch?
+Meanwhile, open source the game kernel so community can improve and extend the featureset
+	Organize and open source the localization effort too; it should *not* require a computer
+
+Longterm: webvr standalone capability?
+
+2d system too?  (Or 2.5d)
+
+Robot that can't speak, you add a line of code that plays an audio file, audio files direct you to build the rest of the robot, through the one tool you made (to play audio files) which you eventually build out into a portable device.  You improve the robot and you make more individual tools, and later (if the player hasn't discovered this themselves) a character will note "Hey you don't have to carry all those tools around you can build them all into one!" and shows you how.
+
+tugly and vorpal
+
+I want this to be about teaching the elements of game design in a hands-on manner 
+
+You can unlock any door, if you only have the key
+	(Key is a voxel red sparkley and it fits in a sparkleyhole)
+
+Functionality list:
+PlaySoundObject
+CreateSoundObject
+	(Record is a function of a sound object and is handled physically with a record button)
+Disassemble - Allows you to edit existing objects.  Maybe call the blockage of editing DRM?
+CreateVoxel
+CreateVoxelArray
+Doohicky Create(Capsule cap)
+
+Maybe "make into capsule" and "capsule" for name of prefabs/prototypes/"blueprints"
+
+StickInputObject
+	Has a stick on it, moves when stick moves
+	Outputs input state that is used by other objects via connectors
+	The stick on it can be pulled off and placed on an object if desired
+
+Project is open source on launch day MIT license, later other platforms (GPL, Apache)
+*maaaaaaaybe* protect copyright on assets?  But let's consider anarchy too.
+Maximum Global Development Freedom.
+
+Full sandbox available at start if you want to immediately start creating but path is not obvious and it is locked by a ribbon that temporarily locks you out of the collectible achivements, that can be restored somehow
+
+The entirety of the game kernel must be able to be overwritten and replaced by an entirely new game, all from within the kernel, at runtime, as end user, without Unity.
+
+If you build a state recorder, not only will you be more ready for multiplayer... but you could record the full creation of the universe from within the project
+
+Game design tip robot has level 100 DRM, normal course of game and even instant-debug will bring you to 99; hearing all her tips (and she attempts to repeat them once each too) results in unlocking the 100 DRM module; or maybe the tip is a clue and the final unlock requires doing work in Unity SDK.
+
+I had to build a world to build a world.
+
+You can now create worlds, and the worlds you create are your own to use as you will.
+
+change minds change worlds
+
+Make VR a first-class citizen
+
+Call prefabs "capsules" (though that conflates with "capsule" which is a renderer/collider type)
+
+Useful version control in backend, and version control useful in frontend
+	If you edit inside a cap, the old cap is automatically saved into the history
+
+To record all kinematics I just need to get positions/rotations and store positions/rotations, and get and store time data, and change an objects position/rotation, so start with this tool in implementing the veeart scripting
+
+You can share capsules or universes.  Capsules can contain the same data as a whole universe, but a "universe" itself is meant as a replacement or upgrade to the core of the system (I've referred to it as kernel earlier.  Universe is better)
+
+Default universe at the "edges" (No actual edge but where precision starts to die) is where you start and where the less-action packed and simpler setpieces are, end of the game is at origin where the most complex stuff is (The elevator in origin takes you to a proceedurally generated world that exists just above or just below (or both) of the origin, and this area uses a modified character controller where you are the origin so it's "infinite" but you can always press a button to elevator back down/up, the most complicated examples in the game
+
+Some elements:
+
+Dohicky: What we call "objects", the smallest unit of being
+Incantation: Text-based scripting language, presented one line per scroll in most early examples
+	May initially be handled by host (Unity) scripting language, or representative of it
+Rune: Doohicky-based scripting language
+Scroll: What we call "scripts" or "components", a container for incantations and/or runes
+Capsule: A prototype/prefab, can contain dohickies and dohickies can contain scrolls
+DeepMagic Dohicky: Dohicky defined outside of Rune or Incantation (such as in Unity)
+	DM Dohicky
+	DevMachine Dohicky
+Heartbeat: Another name for the frame update clock
+"You can do a lot with an invisible doohicky"
+
+Scrolls are doohickys, doohickys can contain doohickys, capsules, and scrolls (which can contain runes and incantations) (can a dohicky contain a Heartbeat?)
+
+Meinong's Jungle contains all capsules that you've used in the project even if you delete them intentionally from the universe; deleting a capsule will NEVER break a rune or incantation; it will always retain a reference to the Jungle copy once the referenced capsule is deleted.  If an capsule has no references in the universe it becomes deletable in the Jungle.  Moving a Jungle capsule into the world will update all references to that new capsule instance
+	Braving the Jungle to get back what they destroyed
+
+Voxel
+Voxel Array
+
+Git version control for all visceral changes
+	Objects must be marked as non-visceral to change at runtime without invoking version control?
+
+The reason people worry more about Facebook rather than Google is they KNOW the data they gave Facebook.
+
+Default Universe should have tools to reset to default, reset to user baseline, and reset to pre-simulation
