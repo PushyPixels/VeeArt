@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RuneInput : MonoBehaviour
+public class RuneParameter<T> : MonoBehaviour
 {
+    public T value;
 }
