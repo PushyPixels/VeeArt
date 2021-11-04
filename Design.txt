@@ -105,3 +105,5 @@ Default Universe should have tools to reset to default, reset to user baseline, 
 The classic reflected mirror puzzle except you have to program your robot to hold the positions
 
 Premade robot logic physics based player interactions (deep drm)
+
+Physical design of GetPosition Rune is next I think
