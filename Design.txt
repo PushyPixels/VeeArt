@@ -108,4 +108,4 @@ Premade robot logic physics based player interactions (deep drm)
 
 Physical design of GetPosition Rune is next I think
 
-Maybe instead of definining Vector3 we should define a Monobehaviour Output type that handles it, and we connect to it (array of Output) in editor
+I'll need a level serialization strategy sooner than later
