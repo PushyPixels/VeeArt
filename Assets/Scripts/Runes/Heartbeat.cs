@@ -2,13 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Heartbeat : MonoBehaviour
+public class Heartbeat : Rune
 {
-    public Rune targetRune;
-
     // Update is called once per frame
     void Update()
     {
-        targetRune.Exec();
+        nextExec.Exec();
     }
 }

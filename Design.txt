@@ -109,3 +109,5 @@ Premade robot logic physics based player interactions (deep drm)
 Physical design of GetPosition Rune is next I think
 
 I'll need a level serialization strategy sooner than later
+
+Collision rune (activates exec with current collided object)

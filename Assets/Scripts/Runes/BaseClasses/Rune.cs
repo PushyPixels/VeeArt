@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Rune : MonoBehaviour
 {
+    public Rune nextExec;
     virtual public void Exec()
     {
         Debug.Log("Exec called on: " + gameObject.name, gameObject);
