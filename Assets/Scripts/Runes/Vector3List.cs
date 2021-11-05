@@ -12,7 +12,7 @@ public class Vector3List : Rune
     {
         vectorList.Add(vector3Input.value);
 
-        // We call base.Exec LAST because it calls the next Exec() and we want that to happen last
+        // We call base.Exec LAST because it calls the next Exec() and we want that to happen last.
         base.Exec();
     }
 }
