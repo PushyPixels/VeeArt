@@ -612,6 +612,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1498508798}
+  - component: {fileID: 1498508799}
   - component: {fileID: 1498508797}
   m_Layer: 0
   m_Name: Vector3ListRune
@@ -632,6 +633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c2ff01335267ff44919238f60744a98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  associatedDoohicky: {fileID: 1498508799}
   nextExec: {fileID: 0}
   vector3Input: {fileID: 811001011}
 --- !u!4 &1498508798
@@ -649,6 +651,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1498508799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498508796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4aba8eb5bb5d3348b0d8a18efe1965b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1725982592
 GameObject:
   m_ObjectHideFlags: 0
@@ -955,6 +969,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2050323479}
+  - component: {fileID: 2050323477}
   - component: {fileID: 2050323478}
   m_Layer: 0
   m_Name: GetPositionRune
@@ -963,6 +978,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2050323477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050323476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4aba8eb5bb5d3348b0d8a18efe1965b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2050323478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -975,6 +1002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b05165c61058a744f86ffb0079c2c9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  associatedDoohicky: {fileID: 2050323477}
   nextExec: {fileID: 1498508797}
   positionOutput: {fileID: 1879943284}
 --- !u!4 &2050323479
@@ -1021,6 +1049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eec318f5425df8478943b4f8410d64d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  associatedDoohicky: {fileID: 0}
   nextExec: {fileID: 2050323478}
 --- !u!4 &2069811057
 Transform:

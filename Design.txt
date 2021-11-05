@@ -111,3 +111,6 @@ Physical design of GetPosition Rune is next I think
 I'll need a level serialization strategy sooner than later
 
 Collision rune (activates exec with current collided object)
+
+Strategy for saving stuff:
+I think splitting what we save into separate files for each object *might* be advantageous from a version control standpoint.
