@@ -6,8 +6,14 @@ using UnityEngine;
 public class Rune : MonoBehaviour
 {
     public Rune nextExec;
+
+    // NOTE: Please call base.Exec() LAST when subclassing
     virtual public void Exec()
     {
-        Debug.Log("Exec called on: " + gameObject.name, gameObject);
+        if(nextExec)
+        {
+            Debug.Log("Calling Exec on: " + nextExec.name, nextExec.gameObject);
+            nextExec.Exec();
+        }
     }
 }

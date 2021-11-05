@@ -8,21 +8,9 @@ public class GetPosition : Rune
 
     public override void Exec()
     {
-        base.Exec();
-
         Debug.Log("Outputting current position as Vector to: " + positionOutput.name, positionOutput.gameObject);
-        positionOutput.value = transform.position;
-    }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        Exec();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // We call base.Exec LAST because it calls the next Exec() and we want that to happen last
+        base.Exec();
     }
 }

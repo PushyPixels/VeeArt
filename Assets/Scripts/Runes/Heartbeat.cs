@@ -7,6 +7,9 @@ public class Heartbeat : Rune
     // Update is called once per frame
     void Update()
     {
-        nextExec.Exec();
+        if(nextExec)
+        {
+            nextExec.Exec();
+        }
     }
 }
