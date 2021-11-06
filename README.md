@@ -3,7 +3,7 @@ The Virtual Arts
 
 * Make a Logic editor sytem for Unity (runtime)
 * Make a Recorder System (to record all future dev sessions, including making Voxel Editor)
-	iRecordable interface?
+** iRecordable interface?
 Make a Voxel editor system for Unity (runtime)
 Make a simple game with the Voxel editor/Logic editor
 Make a Patreon for project (educational content/game Universe) and advertise Unity back-bridge
