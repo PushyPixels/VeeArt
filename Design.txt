@@ -2,20 +2,23 @@ The Virtual Arts
 
 Make a Logic editor sytem for Unity (runtime)
 Make a Recorder System (to record all future dev sessions, including making Voxel Editor)
-	iRecordable interface
+	iRecordable interface?
 Make a Voxel editor system for Unity (runtime)
 Make a simple game with the Voxel editor/Logic editor
-Make a Patreon for project (educational content/game kernel) and advertise Unity back-bridge
+Make a Patreon for project (educational content/game Universe) and advertise Unity back-bridge
 	(Bring the games you make in the editor into Unity; ready to publish.)
 Sell Epic on porting back bridge (and thus game) to Unreal
 Use Epic money to port to GoDot (Or other appropriate open source option)
 	Or build from scratch?
-Meanwhile, open source the game kernel so community can improve and extend the featureset
-	Organize and open source the localization effort too; it should *not* require a computer
+Meanwhile, open source the game Universe so community can improve and extend the featureset
+	Organize and open source the localization effort too
+	Neither should require a computer
 
-Longterm: webvr standalone capability?
-
-2d system too?  (Or 2.5d)
+Longterm:
+	Polygon editors and PBR texture editors
+	2d system too?  (Or 2.5d)
+	webvr standalone capability viable?
+	
 
 Robot that can't speak, you add a line of code that plays an audio file, audio files direct you to build the rest of the robot, through the one tool you made (to play audio files) which you eventually build out into a portable device.  You improve the robot and you make more individual tools, and later (if the player hasn't discovered this themselves) a character will note "Hey you don't have to carry all those tools around you can build them all into one!" and shows you how.
 
@@ -113,4 +116,24 @@ I'll need a level serialization strategy sooner than later
 Collision rune (activates exec with current collided object)
 
 Strategy for saving stuff:
-I think splitting what we save into separate files for each object *might* be advantageous from a version control standpoint.
+I think splitting what we save into separate files for each object *might* be advantageous from a version control standpoint, but it requires having a uniqueID.  Especially if we go binary, which is good for storage and transport but bad for version control.
+
+Serialize the level as Commands (command pattern)
+
+Epic Online Services and Mirror bridge
+
+Stuff we need and where we get it if we aren't making it
+
+Math		
+Rendering	} Unity
+Sound
+Physics
+
+Nodegraph system
+Logic system
+Voxel editors
+Doohicky editors (physics, transform)
+Level serialization
+Git integrations
+History systems
+Exporters
