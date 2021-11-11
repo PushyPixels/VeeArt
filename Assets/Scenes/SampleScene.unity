@@ -647,6 +647,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1728657556}
     m_Modifications:
+    - target: {fileID: 4987348565100701986, guid: 1d621fb96d63ad946afcb06838bf3ec8,
+        type: 3}
+      propertyPath: m_Name
+      value: Vector3ListAddRune
+      objectReference: {fileID: 0}
     - target: {fileID: 4987348565258440971, guid: 1d621fb96d63ad946afcb06838bf3ec8,
         type: 3}
       propertyPath: m_RootOrder
