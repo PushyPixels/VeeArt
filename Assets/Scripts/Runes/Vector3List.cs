@@ -33,7 +33,7 @@ public class Vector3List : Rune
             memento = MessagePackSerializer.Deserialize<Vector3ListMememto>(bytes);
 
             vector3ListOutput.connectedRune = RuneBase.FindRuneByGuid(memento.vector3ListOutputGuid) as RuneParameter<List<Vector3>>;
-            vectorList = new List<Vector3>(memento.vectorList);
+            vectorList = memento.vectorList;
         }
         else
         {
