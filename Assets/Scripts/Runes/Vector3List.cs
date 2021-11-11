@@ -1,15 +1,62 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
+using MessagePack;
 
 public class Vector3List : Rune
 {
     public RuneVectorListParameter vector3ListOutput;
-
+    
     private List<Vector3> vectorList = new List<Vector3>();
+
+    private Vector3ListMememto memento;
+
+    void OnApplicationQuit()
+    {
+        Save();
+    }
 
     void Start()
     {
+        Load();
         vector3ListOutput.value = vectorList;
     }
+
+    void Load()
+    {
+        string path = System.IO.Path.Combine(Application.persistentDataPath, guid.ToString() + ".rune");
+        if(File.Exists(path))
+        {
+            byte[] bytes = File.ReadAllBytes(path);
+            memento = MessagePackSerializer.Deserialize<Vector3ListMememto>(bytes);
+
+            vector3ListOutput.connectedRune = RuneBase.FindRuneByGuid(memento.vector3ListOutputGuid) as RuneParameter<List<Vector3>>;
+            vectorList = memento.vectorList;
+        }
+        else
+        {
+            Debug.LogWarning("No serialized data found, using data from Scene file.", gameObject);
+        }
+    }
+
+    void Save()
+    {
+        memento.vector3ListOutputGuid = vector3ListOutput.guid;
+        memento.vectorList = vectorList;
+
+        string path = System.IO.Path.Combine(Application.persistentDataPath, guid.ToString() + ".rune");
+        byte[] bytes = MessagePackSerializer.Serialize(memento);
+        File.WriteAllBytes(path, bytes);
+    }
+}
+
+[MessagePackObject]
+public class Vector3ListMememto
+{
+    [Key(0)]
+    public Guid vector3ListOutputGuid;
+    [Key(1)]
+    public List<Vector3> vectorList;
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RuneParameter<T> : MonoBehaviour
+public class RuneParameter<T> : RuneBase
 {
     [System.Serializable]
     public enum ParamType { Input, Output }
