@@ -8,7 +8,7 @@ public class GetPosition : Rune
 
     public override void Exec()
     {
-        Debug.Log("Outputting current position as Vector to: " + positionOutput.name, positionOutput.gameObject);
+        //Debug.Log("Outputting current position as Vector to: " + positionOutput.name, positionOutput.gameObject);
         positionOutput.value = associatedDoohicky.transform.position;
 
         // We call base.Exec LAST because it calls the next Exec() and we want that to happen last
