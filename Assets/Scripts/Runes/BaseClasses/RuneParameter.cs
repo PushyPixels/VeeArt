@@ -13,7 +13,7 @@ public class RuneParameter<T> : RuneBase
 
     void Start()
     {
-        Debug.Log("Start called on: " + name, gameObject);
+        //Debug.Log("Start called on: " + name, gameObject);
         previousValue = value;
     }
 

@@ -11,7 +11,7 @@ public class Vector3List : Rune
     
     private List<Vector3> vectorList = new List<Vector3>();
 
-    private Vector3ListMememto memento;
+    private Vector3ListMememto memento = new Vector3ListMememto();
 
     void Start()
     {
@@ -26,14 +26,14 @@ public class Vector3List : Rune
 
     void Load()
     {
-        string path = System.IO.Path.Combine(Application.persistentDataPath, guid.ToString() + ".rune");
+        string path = System.IO.Path.Combine(Application.persistentDataPath, guid + ".rune");
         if(File.Exists(path))
         {
             byte[] bytes = File.ReadAllBytes(path);
             memento = MessagePackSerializer.Deserialize<Vector3ListMememto>(bytes);
 
             vector3ListOutput.connectedRune = RuneBase.FindRuneByGuid(memento.vector3ListOutputGuid) as RuneParameter<List<Vector3>>;
-            vectorList = memento.vectorList;
+            vectorList = new List<Vector3>(memento.vectorList);
         }
         else
         {
@@ -46,7 +46,7 @@ public class Vector3List : Rune
         memento.vector3ListOutputGuid = vector3ListOutput.guid;
         memento.vectorList = vectorList;
 
-        string path = System.IO.Path.Combine(Application.persistentDataPath, guid.ToString() + ".rune");
+        string path = System.IO.Path.Combine(Application.persistentDataPath, guid + ".rune");
         byte[] bytes = MessagePackSerializer.Serialize(memento);
         File.WriteAllBytes(path, bytes);
     }
@@ -56,7 +56,7 @@ public class Vector3List : Rune
 public class Vector3ListMememto
 {
     [Key(0)]
-    public Guid vector3ListOutputGuid;
+    public string vector3ListOutputGuid;
     [Key(1)]
     public List<Vector3> vectorList;
 }

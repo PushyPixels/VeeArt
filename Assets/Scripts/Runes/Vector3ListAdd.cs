@@ -9,7 +9,7 @@ public class Vector3ListAdd : Rune
 
     public override void Exec()
     {
-        vector3ListInput.value.Add(vector3Input.value);
+        vector3ListInput.connectedRune.value.Add(vector3Input.value);
 
         // We call base.Exec LAST because it calls the next Exec() and we want that to happen last.
         base.Exec();
