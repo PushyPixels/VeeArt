@@ -13,15 +13,15 @@ public class Vector3List : Rune
 
     private Vector3ListMememto memento;
 
-    void OnApplicationQuit()
-    {
-        Save();
-    }
-
     void Start()
     {
         Load();
         vector3ListOutput.value = vectorList;
+    }
+
+    void OnApplicationQuit()
+    {
+        Save();
     }
 
     void Load()
