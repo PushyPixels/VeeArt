@@ -26,7 +26,7 @@ public class Vector3List : Rune
 
     void Load()
     {
-        string path = System.IO.Path.Combine(Application.persistentDataPath, guid + ".rune");
+        string path = Path.Combine(Application.persistentDataPath, guid + ".rune");
         if(File.Exists(path))
         {
             byte[] bytes = File.ReadAllBytes(path);
@@ -47,7 +47,7 @@ public class Vector3List : Rune
         memento.vector3ListOutputGuid = vector3ListOutput.guid;
         memento.vectorList = vectorList;
 
-        string path = System.IO.Path.Combine(Application.persistentDataPath, guid + ".rune");
+        string path = Path.Combine(Application.persistentDataPath, guid + ".rune");
         var lz4Options = MessagePackSerializerOptions.Standard.WithCompression(MessagePackCompression.Lz4BlockArray);
         byte[] bytes = MessagePackSerializer.Serialize(memento, lz4Options);
         File.WriteAllBytes(path, bytes);
