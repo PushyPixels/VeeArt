@@ -30,7 +30,8 @@ public class Vector3List : Rune
         if(File.Exists(path))
         {
             byte[] bytes = File.ReadAllBytes(path);
-            memento = MessagePackSerializer.Deserialize<Vector3ListMememto>(bytes);
+            var lz4Options = MessagePackSerializerOptions.Standard.WithCompression(MessagePackCompression.Lz4BlockArray);
+            memento = MessagePackSerializer.Deserialize<Vector3ListMememto>(bytes, lz4Options);
 
             vector3ListOutput.connectedRune = RuneBase.FindRuneByGuid(memento.vector3ListOutputGuid) as RuneParameter<List<Vector3>>;
             vectorList = memento.vectorList;
