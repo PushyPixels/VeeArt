@@ -47,7 +47,8 @@ public class Vector3List : Rune
         memento.vectorList = vectorList;
 
         string path = System.IO.Path.Combine(Application.persistentDataPath, guid + ".rune");
-        byte[] bytes = MessagePackSerializer.Serialize(memento);
+        var lz4Options = MessagePackSerializerOptions.Standard.WithCompression(MessagePackCompression.Lz4BlockArray);
+        byte[] bytes = MessagePackSerializer.Serialize(memento, lz4Options);
         File.WriteAllBytes(path, bytes);
     }
 }

@@ -1,4 +1,5 @@
 The Virtual Arts
+This game was made in vr and so can you
 
 Make a Logic editor sytem for Unity (runtime)
 Make a Recorder System (to record all future dev sessions, including making Voxel Editor)
@@ -140,3 +141,25 @@ Exporters
 
 
 Git system next?  (For saving universe/rune files?)
+	Libgit2: compile it for windows (or use precompile) and android, use it through libget2sharp?
+
+Yellow Brick Road
+Build a node system
+Build nodes needed to build recorder system
+Build recorder system from nodes (unity bootstrap version)
+Build nodes needed for recording audio
+Build serialzer for nodes
+Build in-world 3d nodegraph editor and nodes
+Attach recorder doohicky to head and hands, and nodes
+Record building native nodes for recorder
+Build nodes needed for checking collision
+Build nodes needed for playing audio
+Build nodes needed for player movement
+Build nodes needed for 
+
+
+
+Build nodes needed to recompile C# for a new node?  This would allow me to build more things more quickly, certainly.
+
+
+"Sometimes in order to build a world right you must build it many times.  I've run out of time to rebuild this world.  Now it's your job."
