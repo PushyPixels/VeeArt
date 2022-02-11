@@ -20,6 +20,13 @@ public class Rune : RuneBase
         }
     }
 
+    public static RuneType Instantiate<RuneType>() where RuneType : Rune
+    {
+        GameObject newRuneGameObject = new GameObject();
+        RuneType newRune = newRuneGameObject.AddComponent<RuneType>();
+        return newRune;
+    }
+
     protected MementoType Load<MementoType>()
     {
         string path = Path.Combine(Application.persistentDataPath, guid + ".rune");
