@@ -75,7 +75,7 @@ public class RuneBase : MonoBehaviour
                     if(!globalRuneDictionary.ContainsKey(runeGUID))
                     {
                         // Rune is not in Scene so we must instantiate it from file
-                        // TODO: Implementation
+                        Rune.Instantiate(runeBaseMememto.globalRuneDictionary[runeGUID].GetType());
                     }
                 }
             }

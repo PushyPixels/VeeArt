@@ -15,17 +15,27 @@ public class Vector3List : Rune
 
     void Start()
     {
+        Load();
+
+        vector3ListOutput.value = vectorList;
+    }
+
+    void OnApplicationQuit()
+    {
+        Save();
+    }
+
+    void Load()
+    { 
         memento = Load<Vector3ListMememto>();
         if(memento != null)
         {
             vector3ListOutput.connectedRune = RuneBase.FindRuneByGuid(memento.vector3ListOutputGuid) as RuneParameter<List<Vector3>>;
             vectorList = memento.vectorList;
         }
-
-        vector3ListOutput.value = vectorList;
     }
 
-    void OnApplicationQuit()
+    void Save()
     {
         if(memento == null)
         { 

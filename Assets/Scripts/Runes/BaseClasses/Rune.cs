@@ -20,11 +20,10 @@ public class Rune : RuneBase
         }
     }
 
-    public static RuneType Instantiate<RuneType>() where RuneType : Rune
+    public static void Instantiate(Type runeType)
     {
         GameObject newRuneGameObject = new GameObject();
-        RuneType newRune = newRuneGameObject.AddComponent<RuneType>();
-        return newRune;
+        newRuneGameObject.AddComponent(runeType);
     }
 
     protected override void OnValidate()
