@@ -75,7 +75,7 @@ public class RuneBase : MonoBehaviour
                     if(!globalRuneDictionary.ContainsKey(runeGUID))
                     {
                         // Rune is not in Scene so we must instantiate it, it will load itself from file during instantiation
-                        RuneBase instance = Instantiate(runeBaseMememto.globalRuneDictionary[runeGUID].GetType());
+                        RuneBase instance = InstantiateRune(runeBaseMememto.globalRuneDictionary[runeGUID].GetType());
                         instance.guid = runeGUID;
                         instance.instantiationSource = InstantiationSource.Dictionary;
                         globalRuneDictionary.Add(runeGUID,runeBaseMememto.globalRuneDictionary[runeGUID]);
@@ -95,7 +95,7 @@ public class RuneBase : MonoBehaviour
         return globalRuneDictionary[guid];
     }
 
-    private static RuneBase Instantiate(Type runeType)
+    private static RuneBase InstantiateRune(Type runeType)
     {
         GameObject newRuneGameObject = new GameObject();
         RuneBase newRuneBase = newRuneGameObject.AddComponent(runeType) as RuneBase;
