@@ -20,19 +20,43 @@ public class RuneBase : MonoBehaviour
 
     void Awake()
     {
-        if(instantiationSource == InstantiationSource.Runtime)
+        if (instantiationSource == InstantiationSource.Runtime)
         {
             // Runtime instantiated runes haven't been added to the dictionary yet.  Collision unhandled but should fire exception.
-            globalRuneDictionary.Add(guid,this);
+            globalRuneDictionary.Add(guid, this);
         }
-        if(instantiationSource == InstantiationSource.Scene)
+        if (instantiationSource == InstantiationSource.Scene)
         {
             // If a Rune has been added to scene since the last run, it will not be in the dictionary yet.  We need to add it in this case.  Not sure how to handle collision.
-            if(!globalRuneDictionary.ContainsKey(guid))
+            if (!globalRuneDictionary.ContainsKey(guid))
             {
-                globalRuneDictionary.Add(guid,this);
+                globalRuneDictionary.Add(guid, this);
             }
         }
+    }
+
+    protected MementoType Load<MementoType>()
+    {
+        string path = Path.Combine(Application.persistentDataPath, guid + ".rune");
+        if(File.Exists(path))
+        {
+            byte[] bytes = File.ReadAllBytes(path);
+            var lz4Options = MessagePackSerializerOptions.Standard.WithCompression(MessagePackCompression.Lz4BlockArray);
+            return MessagePackSerializer.Deserialize<MementoType>(bytes, lz4Options);
+        }
+        else
+        {
+            Debug.LogWarning("No serialized data found, using data from Scene file.", gameObject);
+            return default(MementoType);
+        }
+    }
+
+    protected void Save<MementoType>(MementoType memento)
+    {
+        string path = Path.Combine(Application.persistentDataPath, guid + ".rune");
+        var lz4Options = MessagePackSerializerOptions.Standard.WithCompression(MessagePackCompression.Lz4BlockArray);
+        byte[] bytes = MessagePackSerializer.Serialize(memento, lz4Options);
+        File.WriteAllBytes(path, bytes);
     }
 
     protected void LoadRunes() // This should only be called by Master Rune
