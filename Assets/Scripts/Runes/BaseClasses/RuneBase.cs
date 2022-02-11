@@ -75,7 +75,7 @@ public class RuneBase : MonoBehaviour
                     if(!globalRuneDictionary.ContainsKey(runeGUID))
                     {
                         // Rune is not in Scene so we must instantiate it from file
-                        Rune.Instantiate(runeBaseMememto.globalRuneDictionary[runeGUID].GetType());
+                        Instantiate(runeBaseMememto.globalRuneDictionary[runeGUID].GetType());
                     }
                 }
             }
@@ -86,9 +86,21 @@ public class RuneBase : MonoBehaviour
         }
     }
 
+
     public static RuneBase FindRuneByGuid(string guid)
     {
         return globalRuneDictionary[guid];
+    }
+
+    private static RuneBase Instantiate(Type runeType)
+    {
+        GameObject newRuneGameObject = new GameObject();
+        RuneBase newRuneBase = newRuneGameObject.AddComponent(runeType) as RuneBase;
+        if(newRuneBase == null)
+        {
+            Debug.LogError("Type is not a RuneBase?");
+        }
+        return newRuneBase;
     }
 
     protected virtual void OnValidate()
